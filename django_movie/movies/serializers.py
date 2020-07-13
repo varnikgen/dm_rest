@@ -5,7 +5,6 @@ from .models import Movie, Review
 
 class MovieListSerializer(serializers.ModelSerializer):
     """Список фильмов"""
-
     category = serializers.SlugRelatedField(slug_field='name', read_only=True)
 
     class Meta:
@@ -15,7 +14,6 @@ class MovieListSerializer(serializers.ModelSerializer):
 
 class ReviewCreateSerializer(serializers.ModelSerializer):
     """Добавление отзыва"""
-
     class Meta:
         model = Review
         fields = "__all__"
@@ -23,7 +21,6 @@ class ReviewCreateSerializer(serializers.ModelSerializer):
 
 class ReviewSerializer(serializers.ModelSerializer):
     """Вывод отзывов"""
-
     class Meta:
         model = Review
         fields = ("name", "text", "parent")
@@ -31,7 +28,6 @@ class ReviewSerializer(serializers.ModelSerializer):
 
 class MovieDetailSerializer(serializers.ModelSerializer):
     """Полный вывод фильма"""
-
     category = serializers.SlugRelatedField(slug_field='name', read_only=True)
     directors = serializers.SlugRelatedField(slug_field='name', read_only=True, many=True)
     actors = serializers.SlugRelatedField(slug_field='name', read_only=True, many=True)
