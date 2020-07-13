@@ -13,7 +13,7 @@ class FilterReviewListSerializer(serializers.ListSerializer):
 class RecursiveSerializer(serializers.Serializer):
     """Рекурсивный вывод children в отзывах"""
     def to_representation(self, value):
-        serializer = self.parent.parent.__class_(value, context=self.context)
+        serializer = self.parent.parent.__class__(value, context=self.context)
         return serializer.data
 
 
@@ -38,6 +38,7 @@ class ReviewSerializer(serializers.ModelSerializer):
     children = RecursiveSerializer(many=True)
 
     class Meta:
+        list_serializer_class = FilterReviewListSerializer
         model = Review
         fields = ("name", "text", "children")
 
