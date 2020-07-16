@@ -222,8 +222,8 @@ REST_FRAMEWORK = {
 # smtp
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'mellonkhv@gmail.com'
-EMAIL_HOST_PASSWORD = '2Rdflhbkkbjyf!'
+EMAIL_HOST_USER = 'me110nkhv@gmail.com'
+EMAIL_HOST_PASSWORD = '#asdfadfdfasfasdfasdfvdfvasdSDF'
 EMAIL_PORT = 587
 
 
